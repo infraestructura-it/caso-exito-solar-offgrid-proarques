@@ -14,9 +14,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.6}
 a{color:var(--azul)}
-nav{background:var(--azul-d);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:54px;position:sticky;top:0;z-index:100}
-.nav-logo{color:white;font-weight:700;font-size:15px;text-decoration:none}
-.nav-logo span{opacity:.6;font-weight:400}
+nav{background:var(--azul-d);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{width:34px;height:34px;object-fit:contain}
+.nav-logo span{color:white;font-weight:700;font-size:15px;letter-spacing:.01em}
+.nav-logo span em{font-style:normal;color:#00c8e0;font-weight:800}
 .nav-badge{background:rgba(255,255,255,.15);color:white;font-size:11px;padding:3px 10px;border-radius:20px}
 .hero{background:linear-gradient(135deg,#0a2e52 0%,#1a5fa8 55%,#1D9E75 100%);padding:3.5rem 1.5rem 2.5rem;color:white}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);font-size:11px;padding:4px 12px;border-radius:20px;margin-bottom:1rem;font-weight:600;letter-spacing:.05em}
@@ -111,30 +113,15 @@ p:last-child{margin-bottom:0}
 footer{background:#08192a;color:rgba(255,255,255,.5);text-align:center;padding:1.1rem;font-size:12px}
 footer a{color:rgba(255,255,255,.6)}
 @media(max-width:600px){.hero{padding:2.25rem 1rem 2rem}.stat .sv{font-size:1.2rem}.th-brand{display:none}}
-.galeria{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:12px;
-  margin:12px 0 24px;
-}
-
-.galeria img{
-  width:100%;
-  border-radius:12px;
-  object-fit:cover;
-  transition:transform .25s ease;
-  cursor:pointer;
-}
-
-.galeria img:hover{
-  transform:scale(1.05);
-}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="https://infraestructura-it.github.io">IIT <span>InfraestructuraIT</span></a>
+  <a class="nav-logo" href="https://infraestructura-it.github.io">
+    <img src="assets/logo_infraestructura_it.png" alt="Infraestructura-IT logo"/>
+    <span><em>Infraestructura</em>-IT</span>
+  </a>
   <span class="nav-badge">☀️ Caso de éxito</span>
 </nav>
 
@@ -406,35 +393,10 @@ footer a{color:rgba(255,255,255,.6)}
 
 <section>
   <h2>📸 Registro fotográfico</h2>
-
-  <h3>Antes</h3>
-  <div class="galeria">
-    <img src="assets/fotos/antes/1.jpeg">
-    <img src="assets/fotos/antes/2.jpeg">
-    <img src="assets/fotos/antes/3.jpeg">
-    <img src="assets/fotos/antes/4.jpeg">
+  <div class="gal-note">
+    📷 19 fotografías del proyecto — antes, durante y resultado final<br>
+    <span style="font-size:11px;margin-top:4px;display:block">Imágenes en <code>assets/fotos/antes/</code> · <code>durante/</code> · <code>resultado/</code></span>
   </div>
-
-  <h3>Durante</h3>
-  <div class="galeria">
-    <img src="assets/fotos/durante/5.jpeg">
-    <img src="assets/fotos/durante/6.jpeg">
-    <img src="assets/fotos/durante/7.jpeg">
-    <img src="assets/fotos/durante/8.jpeg">
-    <img src="assets/fotos/durante/9.jpeg">
-    <img src="assets/fotos/durante/10.jpeg">
-  </div>
-
-  <h3>Resultado</h3>
-  <div class="galeria">
-    <img src="assets/fotos/resultado/11.jpeg">
-    <img src="assets/fotos/resultado/12.jpeg">
-    <img src="assets/fotos/resultado/13.jpeg">
-    <img src="assets/fotos/resultado/14.jpeg">
-    <img src="assets/fotos/resultado/15.jpeg">
-    <img src="assets/fotos/resultado/16.jpeg">
-  </div>
-
 </section>
 
 <section>
@@ -458,12 +420,12 @@ footer a{color:rgba(255,255,255,.6)}
     <p>IIT diseña e instala sistemas solares residenciales, industriales y off-grid en toda Colombia.</p>
     <div class="cta-btns">
       <a class="btn btn-w" href="https://infraestructura-it.github.io">Ver más proyectos</a>
-      <a class="btn btn-o" href="https://github.com/infraestructura-it">GitHub IIT</a>
+      <a class="btn btn-o" href="https://infraestructura-it.github.io/">Infraestructura-IT ↗</a>
     </div>
   </div>
 </div>
 
-<footer>© 2026 InfraestructuraIT · Bogotá, Colombia · <a href="https://infraestructura-it.github.io">infraestructura-it.github.io</a></footer>
+<footer>© 2026 Infraestructura-IT · Bogotá, Colombia · <a href="https://infraestructura-it.github.io">infraestructura-it.github.io</a></footer>
 
 <script>
 function tog(hdr){
