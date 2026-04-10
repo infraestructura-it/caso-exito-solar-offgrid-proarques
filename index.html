@@ -111,6 +111,24 @@ p:last-child{margin-bottom:0}
 footer{background:#08192a;color:rgba(255,255,255,.5);text-align:center;padding:1.1rem;font-size:12px}
 footer a{color:rgba(255,255,255,.6)}
 @media(max-width:600px){.hero{padding:2.25rem 1rem 2rem}.stat .sv{font-size:1.2rem}.th-brand{display:none}}
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  margin:12px 0 24px;
+}
+
+.galeria img{
+  width:100%;
+  border-radius:12px;
+  object-fit:cover;
+  transition:transform .25s ease;
+  cursor:pointer;
+}
+
+.galeria img:hover{
+  transform:scale(1.05);
+}
 </style>
 </head>
 <body>
@@ -388,10 +406,35 @@ footer a{color:rgba(255,255,255,.6)}
 
 <section>
   <h2>📸 Registro fotográfico</h2>
-  <div class="gal-note">
-    📷 19 fotografías del proyecto — antes, durante y resultado final<br>
-    <span style="font-size:11px;margin-top:4px;display:block">Imágenes en <code>assets/fotos/antes/</code> · <code>durante/</code> · <code>resultado/</code></span>
+
+  <h3>Antes</h3>
+  <div class="galeria">
+    <img src="assets/fotos/antes/1.jpeg">
+    <img src="assets/fotos/antes/2.jpeg">
+    <img src="assets/fotos/antes/3.jpeg">
+    <img src="assets/fotos/antes/4.jpeg">
   </div>
+
+  <h3>Durante</h3>
+  <div class="galeria">
+    <img src="assets/fotos/durante/5.jpeg">
+    <img src="assets/fotos/durante/6.jpeg">
+    <img src="assets/fotos/durante/7.jpeg">
+    <img src="assets/fotos/durante/8.jpeg">
+    <img src="assets/fotos/durante/9.jpeg">
+    <img src="assets/fotos/durante/10.jpeg">
+  </div>
+
+  <h3>Resultado</h3>
+  <div class="galeria">
+    <img src="assets/fotos/resultado/11.jpeg">
+    <img src="assets/fotos/resultado/12.jpeg">
+    <img src="assets/fotos/resultado/13.jpeg">
+    <img src="assets/fotos/resultado/14.jpeg">
+    <img src="assets/fotos/resultado/15.jpeg">
+    <img src="assets/fotos/resultado/16.jpeg">
+  </div>
+
 </section>
 
 <section>
