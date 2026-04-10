@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generado": "2026-04-09",
+    "empresa": "InfraestructuraIT",
+    "slug": "caso-exito-solar-offgrid-proarques"
+  },
+  "proyecto": {
+    "nombre": "Sistema Solar Off-Grid Proarques",
+    "cliente": "Proarques SAS",
+    "tipo": "Solar Off-Grid",
+    "estado": "En operación",
+    "fecha_inicio": "03/2026",
+    "fecha_fin": "03/2026",
+    "slug": "solar-offgrid-proarques"
+  },
+  "ubicacion": {
+    "direccion": "Casa de descanso Proarques",
+    "municipio": "Carmen de Apicalá",
+    "departamento": "Tolima",
+    "pais": "Colombia",
+    "google_maps_url": "https://maps.app.goo.gl/mAXQFb56Wp7kBdsk7",
+    "embed_url": "https://maps.google.com/maps?q=4.1875108,-74.7440717&z=15&output=embed",
+    "lat": 4.1875108,
+    "lng": -74.7440717
+  },
+  "capacidad": {
+    "potencia_instalada": "5 kWp",
+    "energia_generada": "~600 kWh/mes",
+    "almacenamiento": "5 kWh",
+    "area_aprox": null,
+    "num_paneles": 6,
+    "potencia_panel": "700W",
+    "tipo_sistema": "Off-grid",
+    "descripcion": "Sistema completamente autónomo, sin conexión a red. Generación dependiente de irradiación solar y perfil de consumo del inmueble."
+  },
+  "equipos": {
+    "inversor": {
+      "marca": "",
+      "modelo": "",
+      "potencia": "5 kW",
+      "cantidad": 1,
+      "tipo": "Híbrido off-grid",
+      "descripcion": "Inversor híbrido off-grid de 5 kW para gestión de carga de baterías y distribución AC."
+    },
+    "paneles": {
+      "marca": "",
+      "modelo": "",
+      "potencia_unitaria": "700W",
+      "cantidad": 6,
+      "potencia_total": "4.2 kWp",
+      "descripcion": "Paneles monocristalinos de alta eficiencia, instalados en techo inclinado."
+    },
+    "baterias": {
+      "marca": "",
+      "referencia": "",
+      "tipo": "LiFePO4",
+      "capacidad_total": "5 kWh",
+      "descripcion": "Banco de baterías de litio con BMS integrado para ciclo profundo."
+    },
+    "monitoreo": {
+      "marca": "",
+      "referencia": "",
+      "protocolo": "WiFi",
+      "plant_id": "020605004825310087",
+      "descripcion": "Monitoreo en tiempo real: generación, baterías, consumo y alertas."
+    }
+  },
+  "montaje": {
+    "descripcion": "Preparación del sitio, instalación de estructura metálica, montaje de paneles, cableado DC/AC, adecuación eléctrica y puesta en marcha.",
+    "duracion": "3 días",
+    "personal": "2 técnicos IIT",
+    "tipo_estructura": "Techo inclinado",
+    "retos": "Adecuación de la infraestructura eléctrica existente del inmueble para integración con el sistema solar."
+  },
+  "fotos": {
+    "antes": [],
+    "durante": [],
+    "resultado": [],
+    "total_cargadas": 19
+  },
+  "fichas_tecnicas": {
+    "documentos_cargados": 5
+  },
+  "monitoreo_live": {
+    "tipo": "video",
+    "video_url": "https://www.youtube.com/watch?v=8j_MmpcD6YI",
+    "plant_id": "020605004825310087",
+    "portal_url": "https://shine.felicitysolar.com/home"
+  },
+  "impacto": {
+    "problema_resuelto": "Suministro de energía alternativa para casa de descanso en zona sin acceso estable a red eléctrica.",
+    "ahorro_mensual": "$250.000 COP",
+    "roi": "~4 años",
+    "co2_evitado": "~240 kg/mes",
+    "ambiental": "Reducción de ~240 kg de CO₂ mensuales. Equivalente a plantar ~20 árboles por año.",
+    "economico": "Ahorro de $250.000 COP mensuales. Retorno de inversión estimado en 4 años.",
+    "social": "Autonomía energética total para la propiedad. Independencia de la red eléctrica pública.",
+    "testimonio": "Apuesta por proyectos de energía renovable que transforma la forma en que usamos la electricidad."
+  }
+}

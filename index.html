@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sistema Solar Off-Grid Proarques — InfraestructuraIT</title>
+<meta name="description" content="Sistema solar off-grid de 5 kWp instalado por IIT en Carmen de Apicalá, Tolima para Proarques SAS."/>
+<style>
+:root{
+  --azul:#1a5fa8;
+  --azul-light:#e6f1fb;
+  --verde:#1D9E75;
+  --verde-light:#eaf3de;
+  --gris:#f5f5f3;
+  --texto:#1a1a1a;
+  --texto2:#555;
+  --borde:#e0e0dc;
+  --radio:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.6}
+
+/* NAV */
+nav{background:var(--azul);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+.nav-logo{color:white;font-weight:700;font-size:15px;letter-spacing:0.02em;text-decoration:none}
+.nav-logo span{opacity:0.7;font-weight:400}
+.nav-badge{background:rgba(255,255,255,0.2);color:white;font-size:11px;padding:3px 10px;border-radius:20px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0d3d6e 0%,#1a5fa8 60%,#1D9E75 100%);padding:3.5rem 1.5rem 2.5rem;color:white}
+.hero-tag{display:inline-block;background:rgba(255,255,255,0.2);font-size:11px;padding:4px 12px;border-radius:20px;margin-bottom:1rem;letter-spacing:0.05em;font-weight:600}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:0.75rem}
+.hero p{font-size:15px;opacity:0.85;max-width:560px;margin-bottom:1.5rem}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;font-size:12px;padding:5px 12px;border-radius:20px}
+.chip strong{font-weight:600}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--borde);border-bottom:1px solid var(--borde)}
+.stat{background:#fff;padding:1.25rem 1rem;text-align:center}
+.stat .sv{font-size:1.6rem;font-weight:700;color:var(--azul);line-height:1}
+.stat .sk{font-size:11px;color:var(--texto2);margin-top:4px}
+
+/* SECTIONS */
+.container{max-width:860px;margin:0 auto;padding:0 1.25rem}
+section{padding:2.5rem 0;border-bottom:1px solid var(--borde)}
+section:last-of-type{border-bottom:none}
+h2{font-size:1.2rem;font-weight:700;color:var(--texto);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+h2 .ico{font-size:1.1rem}
+h3{font-size:14px;font-weight:600;color:var(--texto);margin-bottom:6px}
+p{font-size:14px;color:var(--texto2);margin-bottom:0.75rem}
+
+/* EQUIPMENT CARDS */
+.equip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.eq-card{border:1px solid var(--borde);border-radius:var(--radio);padding:1rem;background:var(--gris)}
+.eq-card .eq-icon{font-size:1.5rem;margin-bottom:8px}
+.eq-card h3{font-size:13px;font-weight:600;color:var(--texto);margin-bottom:4px}
+.eq-card .eq-val{font-size:1.1rem;font-weight:700;color:var(--azul);margin-bottom:4px}
+.eq-card p{font-size:12px;color:var(--texto2);margin:0}
+
+/* PROCESS */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:16px;padding:1rem 0;border-bottom:1px solid var(--borde)}
+.step:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--azul);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
+.step-body h3{font-size:14px;font-weight:600;margin-bottom:3px}
+.step-body p{font-size:13px;margin:0}
+
+/* MAP */
+.map-wrap{border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde);height:280px}
+.map-wrap iframe{width:100%;height:100%;border:none;display:block}
+
+/* VIDEO */
+.video-wrap{border-radius:var(--radio);overflow:hidden;position:relative;padding-top:56.25%;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-caption{font-size:12px;color:var(--texto2);margin-top:8px;text-align:center}
+
+/* IMPACT */
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.impact-card{border-radius:var(--radio);padding:1.25rem}
+.impact-card.green{background:var(--verde-light);border:1px solid #c0dd97}
+.impact-card.blue{background:var(--azul-light);border:1px solid #b5d4f4}
+.impact-card.gray{background:var(--gris);border:1px solid var(--borde)}
+.impact-card .ic-ico{font-size:1.4rem;margin-bottom:8px}
+.impact-card h3{font-size:13px;font-weight:600;margin-bottom:6px}
+.impact-card p{font-size:13px;margin:0}
+
+/* TESTIMONY */
+.testimony{background:var(--azul-light);border-left:4px solid var(--azul);border-radius:0 var(--radio) var(--radio) 0;padding:1.25rem 1.5rem;margin-top:1rem}
+.testimony blockquote{font-size:15px;font-style:italic;color:var(--texto);margin-bottom:6px}
+.testimony cite{font-size:12px;color:var(--texto2)}
+
+/* GALLERY placeholder */
+.gallery-note{background:var(--gris);border:1px dashed var(--borde);border-radius:var(--radio);padding:1.5rem;text-align:center;color:var(--texto2);font-size:13px}
+
+/* CTA */
+.cta{background:var(--azul);color:white;padding:2.5rem 1.5rem;text-align:center}
+.cta h2{font-size:1.3rem;color:white;justify-content:center;margin-bottom:0.5rem}
+.cta p{color:rgba(255,255,255,0.8);font-size:14px;margin-bottom:1.25rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:opacity 0.2s}
+.btn-white{background:white;color:var(--azul)}
+.btn-outline{background:transparent;color:white;border:1px solid rgba(255,255,255,0.5)}
+.btn:hover{opacity:0.88}
+
+/* FOOTER */
+footer{background:#0d1b2a;color:rgba(255,255,255,0.6);text-align:center;padding:1.25rem;font-size:12px}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none}
+
+@media(max-width:600px){
+  .hero{padding:2.5rem 1rem 2rem}
+  .stat .sv{font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://infraestructura-it.github.io">IIT <span>InfraestructuraIT</span></a>
+  <span class="nav-badge">Caso de éxito</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-tag">☀️ ENERGÍA SOLAR · OFF-GRID · TOLIMA</div>
+    <h1>Sistema Solar Off-Grid<br>Proarques SAS</h1>
+    <p>Autonomía energética total para casa de descanso en Carmen de Apicalá, Tolima. 5 kWp instalados en 3 días.</p>
+    <div class="hero-chips">
+      <div class="chip"><strong>5 kWp</strong> instalados</div>
+      <div class="chip"><strong>6 paneles</strong> × 700W</div>
+      <div class="chip"><strong>Off-grid</strong> 100%</div>
+      <div class="chip"><strong>Marzo 2026</strong></div>
+      <div class="chip">✅ En operación</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="sv">5 kWp</div><div class="sk">Potencia instalada</div></div>
+  <div class="stat"><div class="sv">6</div><div class="sk">Paneles 700W</div></div>
+  <div class="stat"><div class="sv">~600</div><div class="sk">kWh generados/mes</div></div>
+  <div class="stat"><div class="sv">5 kWh</div><div class="sk">Almacenamiento litio</div></div>
+  <div class="stat"><div class="sv">$250K</div><div class="sk">Ahorro COP/mes</div></div>
+  <div class="stat"><div class="sv">4 años</div><div class="sk">Retorno de inversión</div></div>
+</div>
+
+<div class="container">
+
+<!-- UBICACIÓN -->
+<section>
+  <h2><span class="ico">📍</span> Ubicación del proyecto</h2>
+  <p>Casa de descanso de Proarques SAS — Carmen de Apicalá, Tolima, Colombia</p>
+  <div class="map-wrap">
+    <iframe
+      src="https://maps.google.com/maps?q=4.1875108,-74.7440717&z=14&output=embed"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- EQUIPOS -->
+<section>
+  <h2><span class="ico">🔧</span> Equipos del sistema</h2>
+  <div class="equip-grid">
+    <div class="eq-card">
+      <div class="eq-icon">☀️</div>
+      <h3>Paneles solares</h3>
+      <div class="eq-val">6 × 700W</div>
+      <p>Monocristalinos alta eficiencia · 4.2 kWp total · Techo inclinado</p>
+    </div>
+    <div class="eq-card">
+      <div class="eq-icon">🔄</div>
+      <h3>Inversor híbrido</h3>
+      <div class="eq-val">5 kW</div>
+      <p>Off-grid · Gestión de carga de baterías y distribución AC</p>
+    </div>
+    <div class="eq-card">
+      <div class="eq-icon">🔋</div>
+      <h3>Baterías de litio</h3>
+      <div class="eq-val">5 kWh</div>
+      <p>LiFePO4 · BMS integrado · Ciclo profundo · Suministro nocturno</p>
+    </div>
+    <div class="eq-card">
+      <div class="eq-icon">📡</div>
+      <h3>Monitoreo</h3>
+      <div class="eq-val">Tiempo real</div>
+      <p>Generación, baterías, consumo · Plant ID: 020605004825310087</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO DE MONTAJE -->
+<section>
+  <h2><span class="ico">🏗️</span> Proceso de instalación</h2>
+  <p>Instalación completa en <strong>3 días</strong> con 2 técnicos especializados de IIT.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Día 1 — Preparación y estructura</h3>
+        <p>Evaluación del sitio, medición, corte de perfiles e instalación de la estructura metálica en techo inclinado.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Día 2 — Paneles y cableado DC</h3>
+        <p>Montaje y fijación de los 6 paneles solares, tendido del cableado DC, instalación del inversor y banco de baterías.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Día 3 — Adecuación eléctrica y puesta en marcha</h3>
+        <p>Integración con el tablero eléctrico AC existente, conexiones de protección, configuración del inversor y verificación del monitoreo en línea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO MONITOREO -->
+<section>
+  <h2><span class="ico">📊</span> Sistema en funcionamiento</h2>
+  <p>Video de operación del sistema solar — generación activa, estado de baterías y distribución de carga.</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/8j_MmpcD6YI"
+      title="Sistema solar Proarques en funcionamiento"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="video-caption">Sistema solar off-grid 5 kWp — Proarques SAS, Carmen de Apicalá</p>
+</section>
+
+<!-- FOTOS -->
+<section>
+  <h2><span class="ico">📸</span> Registro fotográfico</h2>
+  <div class="gallery-note">
+    📷 19 fotografías del proyecto (antes, durante y después de la instalación)<br>
+    <span style="font-size:11px;margin-top:4px;display:block">Las imágenes serán cargadas en <code>assets/fotos/</code> al subir el repositorio</span>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section>
+  <h2><span class="ico">🌱</span> Impacto del proyecto</h2>
+  <div class="impact-grid">
+    <div class="impact-card green">
+      <div class="ic-ico">🌿</div>
+      <h3>Impacto ambiental</h3>
+      <p>~240 kg de CO₂ evitados cada mes. Equivalente a plantar 20 árboles por año.</p>
+    </div>
+    <div class="impact-card blue">
+      <div class="ic-ico">💰</div>
+      <h3>Impacto económico</h3>
+      <p>$250.000 COP de ahorro mensual. Retorno de inversión estimado en 4 años. 25+ años de energía limpia.</p>
+    </div>
+    <div class="impact-card gray">
+      <div class="ic-ico">🤝</div>
+      <h3>Impacto social</h3>
+      <p>Autonomía energética total. Independencia de la red eléctrica pública en zona rural del Tolima.</p>
+    </div>
+  </div>
+
+  <div class="testimony">
+    <blockquote>"Una apuesta por proyectos de energía renovable que transforma la forma en que usamos la electricidad."</blockquote>
+    <cite>— Proarques SAS, cliente IIT</cite>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- CTA -->
+<div class="cta">
+  <div class="container">
+    <h2>¿Tu empresa necesita energía solar?</h2>
+    <p>IIT diseña e instala sistemas solares residenciales, industriales y off-grid en toda Colombia.</p>
+    <div class="cta-btns">
+      <a class="btn btn-white" href="https://infraestructura-it.github.io">Ver más proyectos</a>
+      <a class="btn btn-outline" href="https://github.com/infraestructura-it">GitHub IIT</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 InfraestructuraIT · Bogotá, Colombia ·
+  <a href="https://infraestructura-it.github.io">infraestructura-it.github.io</a>
+</footer>
+
+</body>
+</html>
