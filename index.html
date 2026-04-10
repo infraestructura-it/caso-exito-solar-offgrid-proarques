@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sistema Solar Off-Grid Proarques — InfraestructuraIT</title>
+<meta name="description" content="Sistema solar off-grid 5 kWp instalado por IIT en Carmen de Apicalá, Tolima para Proarques SAS."/>
+<style>
+:root{
+  --azul:#1a5fa8;--azul-d:#0d3d6e;--azul-l:#e6f1fb;
+  --verde:#1D9E75;--verde-l:#eaf3de;
+  --gris:#f5f5f3;--texto:#1a1a1a;--texto2:#555;--borde:#e0e0dc;--r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.6}
+a{color:var(--azul)}
+nav{background:var(--azul-d);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:54px;position:sticky;top:0;z-index:100}
+.nav-logo{color:white;font-weight:700;font-size:15px;text-decoration:none}
+.nav-logo span{opacity:.6;font-weight:400}
+.nav-badge{background:rgba(255,255,255,.15);color:white;font-size:11px;padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(135deg,#0a2e52 0%,#1a5fa8 55%,#1D9E75 100%);padding:3.5rem 1.5rem 2.5rem;color:white}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);font-size:11px;padding:4px 12px;border-radius:20px;margin-bottom:1rem;font-weight:600;letter-spacing:.05em}
+.hero h1{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:700;line-height:1.2;margin-bottom:.75rem}
+.hero p{font-size:14px;opacity:.85;max-width:540px;margin-bottom:1.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:white;font-size:11px;padding:4px 11px;border-radius:20px}
+.chip strong{font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1px;background:var(--borde);border-bottom:1px solid var(--borde)}
+.stat{background:#fff;padding:1.1rem .75rem;text-align:center}
+.stat .sv{font-size:1.4rem;font-weight:700;color:var(--azul);line-height:1}
+.stat .sk{font-size:10px;color:var(--texto2);margin-top:3px}
+.container{max-width:880px;margin:0 auto;padding:0 1.25rem}
+section{padding:2.25rem 0;border-bottom:1px solid var(--borde)}
+h2{font-size:1.15rem;font-weight:700;color:var(--texto);margin-bottom:1.1rem;display:flex;align-items:center;gap:8px}
+h3{font-size:14px;font-weight:600;color:var(--texto);margin-bottom:5px}
+p{font-size:14px;color:var(--texto2);margin-bottom:.6rem}
+p:last-child{margin-bottom:0}
+
+/* TOGGLE */
+.toggle-group{display:flex;flex-direction:column;gap:8px}
+.tgl{border:1px solid var(--borde);border-radius:var(--r);overflow:hidden}
+.tgl-hdr{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;background:#fff;user-select:none;transition:background .15s}
+.tgl-hdr:hover{background:var(--gris)}
+.th-ico{font-size:1.1rem;flex-shrink:0}
+.th-info{flex:1;min-width:0}
+.th-title{font-size:13px;font-weight:600;color:var(--texto)}
+.th-sub{font-size:11px;color:var(--texto2);margin-top:1px}
+.th-brand{font-size:11px;background:var(--azul-l);color:var(--azul);padding:2px 8px;border-radius:20px;font-weight:500;white-space:nowrap;flex-shrink:0}
+.th-arr{font-size:12px;color:var(--texto2);transition:transform .25s;flex-shrink:0;margin-left:6px}
+.tgl-hdr.open .th-arr{transform:rotate(180deg)}
+.tgl-body{display:none;padding:14px;border-top:1px solid var(--borde);background:#fafaf8}
+.tgl-body.open{display:block}
+.spec-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.spec-table tr{border-bottom:1px solid var(--borde)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td{padding:5px 8px;vertical-align:top}
+.spec-table td:first-child{color:var(--texto2);width:52%;font-weight:500}
+.spec-table td:last-child{color:var(--texto);font-weight:600}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:3px;margin-top:10px}
+.feat-list li{font-size:12px;color:var(--texto2);padding-left:16px;position:relative}
+.feat-list li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:700}
+.ficha-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;background:var(--azul);color:white;padding:6px 14px;border-radius:8px;text-decoration:none;font-weight:500}
+.ficha-link:hover{background:var(--azul-d)}
+
+/* MONITOREO */
+.mon-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.mon-tab{padding:7px 16px;border:1px solid var(--borde);border-radius:20px;font-size:13px;cursor:pointer;background:#fff;color:var(--texto2);transition:all .2s;font-weight:500}
+.mon-tab.active{background:var(--azul);color:white;border-color:var(--azul)}
+.mon-panel{display:none}
+.mon-panel.active{display:block}
+.video-wrap{border-radius:var(--r);overflow:hidden;position:relative;padding-top:56.25%;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.shine-wrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--borde);height:460px}
+.shine-wrap iframe{width:100%;height:100%;border:none;display:block}
+.mon-info{background:var(--gris);border-radius:var(--r);padding:12px 14px;margin-top:10px;font-size:13px;color:var(--texto2)}
+.mon-info strong{color:var(--texto)}
+
+/* MONTAJE */
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:14px;padding:.9rem 0;border-bottom:1px solid var(--borde)}
+.step:last-child{border-bottom:none}
+.step-n{width:30px;height:30px;border-radius:50%;background:var(--azul);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+.step-b h3{font-size:13px;margin-bottom:2px}
+.step-b p{font-size:13px;margin:0}
+
+/* MAP */
+.map-wrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--borde);height:240px}
+.map-wrap iframe{width:100%;height:100%;border:none;display:block}
+
+/* IMPACTO */
+.imp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.imp-card{border-radius:var(--r);padding:1.1rem}
+.imp-card.g{background:var(--verde-l);border:1px solid #c0dd97}
+.imp-card.b{background:var(--azul-l);border:1px solid #b5d4f4}
+.imp-card.gr{background:var(--gris);border:1px solid var(--borde)}
+.imp-card .ii{font-size:1.3rem;margin-bottom:7px}
+.imp-card h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-bottom:5px}
+.imp-card p{font-size:13px;margin:0}
+.testimony{background:var(--azul-l);border-left:4px solid var(--azul);border-radius:0 var(--r) var(--r) 0;padding:1.1rem 1.4rem;margin-top:1rem}
+.testimony blockquote{font-size:15px;font-style:italic;color:var(--texto);margin-bottom:5px}
+.testimony cite{font-size:12px;color:var(--texto2)}
+.gal-note{background:var(--gris);border:1px dashed var(--borde);border-radius:var(--r);padding:1.5rem;text-align:center;color:var(--texto2);font-size:13px}
+.cta{background:var(--azul-d);color:white;padding:2.5rem 1.5rem;text-align:center}
+.cta h2{font-size:1.2rem;color:white;justify-content:center;margin-bottom:.5rem}
+.cta p{color:rgba(255,255,255,.75);font-size:14px;margin-bottom:1.25rem}
+.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:opacity .2s}
+.btn-w{background:white;color:var(--azul)}
+.btn-o{background:transparent;color:white;border:1px solid rgba(255,255,255,.4)}
+.btn:hover{opacity:.85}
+footer{background:#08192a;color:rgba(255,255,255,.5);text-align:center;padding:1.1rem;font-size:12px}
+footer a{color:rgba(255,255,255,.6)}
+@media(max-width:600px){.hero{padding:2.25rem 1rem 2rem}.stat .sv{font-size:1.2rem}.th-brand{display:none}}
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  margin:12px 0 24px;
+}
+
+.galeria img{
+  width:100%;
+  border-radius:12px;
+  object-fit:cover;
+  transition:transform .25s ease;
+  cursor:pointer;
+}
+
+.galeria img:hover{
+  transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://infraestructura-it.github.io">IIT <span>InfraestructuraIT</span></a>
+  <span class="nav-badge">☀️ Caso de éxito</span>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-tag">☀️ SOLAR OFF-GRID · CARMEN DE APICALÁ, TOLIMA</div>
+    <h1>Sistema Solar Off-Grid<br>Proarques SAS</h1>
+    <p>Autonomía energética total para casa de descanso en el Tolima. 5 kWp instalados en 3 días con tecnología Felicity Solar y ZNShine.</p>
+    <div class="chips">
+      <div class="chip"><strong>5 kWp</strong> instalados</div>
+      <div class="chip"><strong>6 paneles</strong> HJT 700W</div>
+      <div class="chip"><strong>Off-grid</strong> 100%</div>
+      <div class="chip"><strong>LiFePO4</strong> 5 kWh</div>
+      <div class="chip">Marzo 2026</div>
+      <div class="chip">✅ En operación</div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="sv">5 kWp</div><div class="sk">Potencia instalada</div></div>
+  <div class="stat"><div class="sv">6</div><div class="sk">Paneles 700W HJT</div></div>
+  <div class="stat"><div class="sv">~600</div><div class="sk">kWh/mes</div></div>
+  <div class="stat"><div class="sv">5 kWh</div><div class="sk">Almacenamiento</div></div>
+  <div class="stat"><div class="sv">$250K</div><div class="sk">Ahorro COP/mes</div></div>
+  <div class="stat"><div class="sv">4 años</div><div class="sk">ROI estimado</div></div>
+</div>
+
+<div class="container">
+
+<section>
+  <h2>📍 Ubicación</h2>
+  <p>Casa de descanso Proarques SAS — Carmen de Apicalá, Tolima, Colombia</p>
+  <div class="map-wrap">
+    <iframe src="https://maps.google.com/maps?q=4.1875108,-74.7440717&z=14&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>🔧 Equipos del sistema — fichas técnicas</h2>
+  <div class="toggle-group">
+
+    <div class="tgl">
+      <div class="tgl-hdr" onclick="tog(this)">
+        <span class="th-ico">🔄</span>
+        <div class="th-info">
+          <div class="th-title">Inversor solar — IVEM5048-LV</div>
+          <div class="th-sub">Felicity Solar · 5000W · 48V · Pure Sine Wave · 93% eficiencia</div>
+        </div>
+        <span class="th-brand">Felicity Solar</span>
+        <span class="th-arr">▼</span>
+      </div>
+      <div class="tgl-body">
+        <table class="spec-table">
+          <tr><td>Modelo</td><td>IVEM5048-LV</td></tr>
+          <tr><td>Potencia de salida</td><td>5000VA / 5000W</td></tr>
+          <tr><td>Voltaje DC nominal</td><td>48V</td></tr>
+          <tr><td>Rango voltaje PV</td><td>90V – 500V</td></tr>
+          <tr><td>Voltaje PV circuito abierto máx.</td><td>500V</td></tr>
+          <tr><td>Corriente carga solar máx.</td><td>100A</td></tr>
+          <tr><td>Potencia entrada PV máx.</td><td>6000W</td></tr>
+          <tr><td>Voltaje salida AC</td><td>110Vac ± 5%</td></tr>
+          <tr><td>Frecuencia salida</td><td>50/60Hz ± 0.3Hz (ajustable)</td></tr>
+          <tr><td>Eficiencia pico</td><td>93%</td></tr>
+          <tr><td>Paralelo</td><td>Hasta 6 unidades</td></tr>
+          <tr><td>Dimensiones</td><td>460 × 343 × 137 mm · 13.1 kg</td></tr>
+        </table>
+        <ul class="feat-list">
+          <li>Onda sinusoidal pura — compatible con cualquier tipo de carga</li>
+          <li>MPPT integrado para máxima extracción solar</li>
+          <li>Función de inicio en frío y activación de baterías de litio</li>
+          <li>Opera sin baterías conectadas · Auto-reinicio al recuperar AC</li>
+          <li>Paralelo hasta 6 unidades para ampliar capacidad</li>
+        </ul>
+        <a class="ficha-link" href="assets/fichas/ficha-tecnica-ivem5048-lv-felicity-solar.pdf" target="_blank">📄 Descargar ficha técnica PDF</a>
+      </div>
+    </div>
+
+    <div class="tgl">
+      <div class="tgl-hdr" onclick="tog(this)">
+        <span class="th-ico">☀️</span>
+        <div class="th-info">
+          <div class="th-title">Panel HJT Bifacial — ZXI8-GPLDD132</div>
+          <div class="th-sub">ZNShine Solar · 700W · 23% eficiencia · 30 años garantía</div>
+        </div>
+        <span class="th-brand">ZNShine Solar</span>
+        <span class="th-arr">▼</span>
+      </div>
+      <div class="tgl-body">
+        <table class="spec-table">
+          <tr><td>Modelo</td><td>ZXI8-GPLDD132 — 700W</td></tr>
+          <tr><td>Tecnología</td><td>HJT Half-Cell Bifacial Double Glass</td></tr>
+          <tr><td>Tipo celda</td><td>Monocristalino HJT · 132 celdas (6×22)</td></tr>
+          <tr><td>Eficiencia del módulo</td><td>22.5% – 23.0%</td></tr>
+          <tr><td>Voltaje máx. potencia (Vmpp)</td><td>41.60V</td></tr>
+          <tr><td>Corriente máx. potencia (Impp)</td><td>16.83A</td></tr>
+          <tr><td>Voltaje circuito abierto (Voc)</td><td>49.80V</td></tr>
+          <tr><td>Corriente cortocircuito (Isc)</td><td>17.98A</td></tr>
+          <tr><td>Degradación anual</td><td>0.30% (mínima del mercado)</td></tr>
+          <tr><td>Factor bifacial</td><td>85 ± 10%</td></tr>
+          <tr><td>Voltaje sistema máx.</td><td>1500V DC</td></tr>
+          <tr><td>Temperatura operación</td><td>-40°C a +85°C</td></tr>
+          <tr><td>Dimensiones</td><td>2384 × 1303 × 35 mm · 38.5 kg</td></tr>
+          <tr><td>Garantía producto / producción</td><td>12 años / 30 años</td></tr>
+        </table>
+        <ul class="feat-list">
+          <li>HJT: mayor eficiencia y menor coeficiente de temperatura que PERC</li>
+          <li>Bifacial: genera energía adicional por la cara posterior del panel</li>
+          <li>Anti-PID: resistente a degradación inducida por potencial</li>
+          <li>Resistente a sal, amoníaco, arena y alta humedad</li>
+          <li>Bloomberg Tier 1 — 10 GW de capacidad de producción</li>
+        </ul>
+        <a class="ficha-link" href="assets/fichas/FICHA-TECNICA-PANEL-SOLAR-MONOCRISTALINO-700W-24V-BIFACIAL-ZNSHINE-MATRIX-ENERGY-SYSTEMS.pdf" target="_blank">📄 Descargar ficha técnica PDF</a>
+      </div>
+    </div>
+
+    <div class="tgl">
+      <div class="tgl-hdr" onclick="tog(this)">
+        <span class="th-ico">🔋</span>
+        <div class="th-info">
+          <div class="th-title">Batería LiFePO4 — LPBF48100-M</div>
+          <div class="th-sub">Felicity Solar · 5 kWh · 51.2V · ≥6000 ciclos · 5 años garantía</div>
+        </div>
+        <span class="th-brand">Felicity Solar</span>
+        <span class="th-arr">▼</span>
+      </div>
+      <div class="tgl-body">
+        <table class="spec-table">
+          <tr><td>Modelo</td><td>LPBF48100-M</td></tr>
+          <tr><td>Química</td><td>LiFePO4 (Litio Hierro Fosfato)</td></tr>
+          <tr><td>Capacidad utilizable</td><td>5 kWh</td></tr>
+          <tr><td>Voltaje nominal</td><td>51.2V</td></tr>
+          <tr><td>Rango de voltaje</td><td>48 – 57.6V</td></tr>
+          <tr><td>Corriente máx. carga/descarga</td><td>100A @ 15S</td></tr>
+          <tr><td>Potencia máx. salida</td><td>5000W</td></tr>
+          <tr><td>DOD (profundidad descarga)</td><td>≥ 95%</td></tr>
+          <tr><td>Ciclo de vida</td><td>≥ 6000 ciclos @ 25°C · 80% DOD</td></tr>
+          <tr><td>Comunicación</td><td>CAN & RS485</td></tr>
+          <tr><td>Protección</td><td>IP21 · BMS integrado</td></tr>
+          <tr><td>Escalabilidad</td><td>Hasta 6 unidades en paralelo (30 kWh)</td></tr>
+          <tr><td>Dimensiones / Peso</td><td>630 × 540 × 260 mm · 40 kg</td></tr>
+          <tr><td>Garantía</td><td>5 años</td></tr>
+        </table>
+        <ul class="feat-list">
+          <li>BMS integrado: protección contra sobrecarga, sobredescarga y cortocircuito</li>
+          <li>Química LiFePO4: la más segura del mercado, sin riesgo de combustión</li>
+          <li>Más de 16 años de vida útil a 1 ciclo completo diario</li>
+          <li>Expandible hasta 30 kWh conectando 6 unidades en paralelo</li>
+        </ul>
+        <a class="ficha-link" href="assets/fichas/LPBF48100-M48200-H-葡语单页.pdf" target="_blank">📄 Descargar ficha técnica PDF</a>
+      </div>
+    </div>
+
+    <div class="tgl">
+      <div class="tgl-hdr" onclick="tog(this)">
+        <span class="th-ico">📡</span>
+        <div class="th-info">
+          <div class="th-title">Smart WiFi DTU — IOTH2407</div>
+          <div class="th-sub">Felicity Solar · Monitoreo en tiempo real · 2.4GHz WiFi</div>
+        </div>
+        <span class="th-brand">Felicity Solar</span>
+        <span class="th-arr">▼</span>
+      </div>
+      <div class="tgl-body">
+        <table class="spec-table">
+          <tr><td>Modelo</td><td>Smart WiFi DTU-S IOTH2407</td></tr>
+          <tr><td>Conectividad</td><td>2.4GHz WiFi</td></tr>
+          <tr><td>Comunicación con inversor</td><td>RS232 / RS485</td></tr>
+          <tr><td>Plataforma cloud</td><td>shine.felicitysolar.com</td></tr>
+          <tr><td>App móvil</td><td>Fsolar — iOS y Android</td></tr>
+          <tr><td>Plant ID del proyecto</td><td>020605004825310087</td></tr>
+        </table>
+        <ul class="feat-list">
+          <li>Monitoreo en tiempo real: generación PV, baterías, consumo AC</li>
+          <li>Acceso desde cualquier dispositivo vía web o app móvil</li>
+          <li>Alertas automáticas ante fallas o anomalías del sistema</li>
+          <li>Historial de producción y estadísticas energéticas</li>
+        </ul>
+        <a class="ficha-link" href="assets/fichas/Ficha_-Tecnica_-Monitorización_-wifi-ioth-H2407_-Felicity_-Solar.pdf" target="_blank">📄 Descargar ficha técnica PDF</a>
+      </div>
+    </div>
+
+    <div class="tgl">
+      <div class="tgl-hdr" onclick="tog(this)">
+        <span class="th-ico">🏗️</span>
+        <div class="th-info">
+          <div class="th-title">Estructura G-Clamp — Standing Seam</div>
+          <div class="th-sub">Alurack · Aluminio estructural · Techo inclinado · Certificada ONAC</div>
+        </div>
+        <span class="th-brand">Alurack</span>
+        <span class="th-arr">▼</span>
+      </div>
+      <div class="tgl-body">
+        <table class="spec-table">
+          <tr><td>Sistema</td><td>G-Clamp MRAIL + Anclaje ELE</td></tr>
+          <tr><td>Tipo de cubierta</td><td>Standing Seam (teja metálica)</td></tr>
+          <tr><td>Material</td><td>Aluminio estructural + acero inoxidable</td></tr>
+          <tr><td>Tornillería</td><td>Acero inoxidable DIN 912</td></tr>
+          <tr><td>Torque instalación</td><td>14 Nm (eclamp/mclamp)</td></tr>
+          <tr><td>Orientación módulos</td><td>Horizontal / Landscape</td></tr>
+          <tr><td>Certificación</td><td>Avalada por organismos ONAC Colombia</td></tr>
+        </table>
+        <ul class="feat-list">
+          <li>Sin perforación de la cubierta — anclaje por presión sobre pestaña</li>
+          <li>Equipotencialidad garantizada mediante pines de cobre integrados</li>
+          <li>Compatible con espesores de panel 30, 35 y 40 mm</li>
+          <li>Instalación en 3 pasos: ELE → MRAIL → paneles</li>
+        </ul>
+        <a class="ficha-link" href="assets/fichas/Manual-G-Clamp.pdf" target="_blank">📄 Descargar manual de instalación PDF</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>📊 Monitoreo del sistema</h2>
+  <div class="mon-tabs">
+    <div class="mon-tab active" onclick="switchMon('video',this)">▶ Video de funcionamiento</div>
+    <div class="mon-tab" onclick="switchMon('shine',this)">🌐 Portal Felicity Solar</div>
+  </div>
+  <div class="mon-panel active" id="mon-video">
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/8j_MmpcD6YI"
+        title="Sistema solar Proarques en funcionamiento"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="mon-info">Sistema solar off-grid 5 kWp en operación — generación activa, estado de baterías y distribución de carga al inmueble.</div>
+  </div>
+  <div class="mon-panel" id="mon-shine">
+    <div class="shine-wrap">
+      <iframe src="https://shine.felicitysolar.com/home" title="Monitoreo Felicity Solar — Proarques" loading="lazy"></iframe>
+    </div>
+    <div class="mon-info">
+      <strong>Plant ID:</strong> 020605004825310087 · Portal en vivo — requiere sesión activa en Felicity Solar ·
+      <a href="https://shine.felicitysolar.com/home" target="_blank">Abrir en nueva pestaña ↗</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🏗️ Proceso de instalación</h2>
+  <p>Instalación completa en <strong>3 días</strong> con 2 técnicos especializados de IIT.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-b">
+        <h3>Día 1 — Preparación y estructura Alurack G-Clamp</h3>
+        <p>Evaluación del sitio, medición y trazado. Instalación de la estructura G-Clamp sobre techo inclinado Standing Seam sin perforar la cubierta. Torque de 14 Nm en todos los anclajes.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-b">
+        <h3>Día 2 — Paneles ZNShine y cableado DC</h3>
+        <p>Montaje de los 6 paneles ZNShine 700W HJT en orientación landscape. Tendido de cableado DC 4mm², instalación del inversor Felicity IVEM5048-LV y banco de baterías LPBF48100-M.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-b">
+        <h3>Día 3 — Adecuación eléctrica AC y puesta en marcha</h3>
+        <p>Integración con tablero eléctrico AC existente, conexiones de protección bajo norma RETIE, configuración del inversor, activación del WiFi DTU IOTH2407 y verificación del monitoreo en shine.felicitysolar.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📸 Registro fotográfico</h2>
+
+  <h3>Antes</h3>
+  <div class="galeria">
+    <img src="assets/fotos/antes/1.jpeg">
+    <img src="assets/fotos/antes/2.jpeg">
+    <img src="assets/fotos/antes/3.jpeg">
+    <img src="assets/fotos/antes/4.jpeg">
+  </div>
+
+  <h3>Durante</h3>
+  <div class="galeria">
+    <img src="assets/fotos/durante/5.jpeg">
+    <img src="assets/fotos/durante/6.jpeg">
+    <img src="assets/fotos/durante/7.jpeg">
+    <img src="assets/fotos/durante/8.jpeg">
+    <img src="assets/fotos/durante/9.jpeg">
+    <img src="assets/fotos/durante/10.jpeg">
+  </div>
+
+  <h3>Resultado</h3>
+  <div class="galeria">
+    <img src="assets/fotos/resultado/11.jpeg">
+    <img src="assets/fotos/resultado/12.jpeg">
+    <img src="assets/fotos/resultado/13.jpeg">
+    <img src="assets/fotos/resultado/14.jpeg">
+    <img src="assets/fotos/resultado/15.jpeg">
+    <img src="assets/fotos/resultado/16.jpeg">
+  </div>
+
+</section>
+
+<section>
+  <h2>🌱 Impacto del proyecto</h2>
+  <div class="imp-grid">
+    <div class="imp-card g"><div class="ii">🌿</div><h3>Ambiental</h3><p>~240 kg de CO₂ evitados por mes. Equivalente a plantar 20 árboles cada año de operación.</p></div>
+    <div class="imp-card b"><div class="ii">💰</div><h3>Económico</h3><p>$250.000 COP de ahorro mensual. ROI estimado en 4 años. Energía limpia por 25+ años.</p></div>
+    <div class="imp-card gr"><div class="ii">🤝</div><h3>Social</h3><p>Autonomía energética total. Independencia de la red eléctrica pública en zona rural del Tolima.</p></div>
+  </div>
+  <div class="testimony">
+    <blockquote>"Una apuesta por proyectos de energía renovable que transforma la forma en que usamos la electricidad."</blockquote>
+    <cite>— Proarques SAS, cliente IIT</cite>
+  </div>
+</section>
+
+</div>
+
+<div class="cta">
+  <div class="container">
+    <h2>¿Tu empresa necesita energía solar?</h2>
+    <p>IIT diseña e instala sistemas solares residenciales, industriales y off-grid en toda Colombia.</p>
+    <div class="cta-btns">
+      <a class="btn btn-w" href="https://infraestructura-it.github.io">Ver más proyectos</a>
+      <a class="btn btn-o" href="https://github.com/infraestructura-it">GitHub IIT</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 InfraestructuraIT · Bogotá, Colombia · <a href="https://infraestructura-it.github.io">infraestructura-it.github.io</a></footer>
+
+<script>
+function tog(hdr){
+  const b=hdr.nextElementSibling;
+  const o=b.classList.contains('open');
+  hdr.classList.toggle('open',!o);
+  b.classList.toggle('open',!o);
+}
+function switchMon(id,tab){
+  document.querySelectorAll('.mon-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.mon-panel').forEach(p=>p.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('mon-'+id).classList.add('active');
+}
+</script>
+</body>
+</html>
